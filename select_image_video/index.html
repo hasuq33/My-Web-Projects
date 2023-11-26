@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Upload</title>
+</head>
+<body>
+    <h1>Upload Media</h1>
+    <form action="/upload-media/submit" method="post" enctype="multipart/form-data">
+        <label for="media_type">Media Type:</label>
+        <select id="media_type" name="media_type">
+            <option value="Image">Image</option>
+            <option value="Video">Video</option>
+        </select>
+
+        <!-- Image Upload -->
+        <div id="image_upload" style="display:none;">
+            <img src="case_study_jeux_loic.jpg" alt="Harshiv">
+        </div>
+
+        <!-- Video Upload -->
+        <div id="video_upload" style="display:none;">
+               <video src="pexels-ibrahim-bennett-15541408 (1440p).mp4" alt="Harshiv" controls></video>
+        </div>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#media_type").on("change", function () {
+                var selectedValue = $(this).val();
+                if (selectedValue === "Image") {
+                    $("#image_upload").show();
+                    $("#video_upload").hide();
+                } else if (selectedValue === "Video") {
+                    $("#image_upload").hide();
+                    $("#video_upload").show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

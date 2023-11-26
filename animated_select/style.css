@@ -1,0 +1,44 @@
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(icon.png);
+  --option-bg: rgb(233, 217, 217);
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+/* <select> styles */
+.select{
+  background: linear-gradient(65deg, rgb(244 239 239), rgb(242 230 242));
+}
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 40rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+    cursor: pointer;
+  }
+}
+

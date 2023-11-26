@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Experiment</title>
+</head>
+<body>
+    <button id="btn" onclick="addRow()">Add Line</button>
+    <br><br>
+    <table id="myTable">
+        <thead>
+            <tr>
+            <th>Subject</th>
+            <th>priority</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">      
+        </tbody>
+    </table>
+</body>
+<script>
+    function addRow(){
+        // Get the table element in which you want to add row
+        let table = document.getElementById("tableBody");
+       //Create a row element
+
+       let row = document.createElement("tr");
+
+       //Create cells
+       let c1 = document.createElement("td");
+       let c2 = document.createElement("td");
+       let c3 = document.createElement("td");
+
+       //Create Input Elements
+       let input1 = document.createElement("input");
+       var array = ["Select Option","Manatory","Optional"];
+       var input2 = document.createElement("select");
+       input2.id = "mySelect";
+
+       let input3 = document.createElement("input");
+       input3.type = "button";
+       input3.value = "Delete";
+
+       //Input attribute
+       input1.type = "text";   
+
+        for(var i=0; i <array.length; i++){
+            var option = document.createElement("option");
+            option.value = array[i];
+            option.text = array[i];
+            input2.appendChild(option);
+        }
+
+        // Eventlistner That will delete row 
+        input3.addEventListener("click",function(){
+            table.removeChild(row);
+        });
+
+        //Let append the input tag in cells
+        c1.appendChild(input1);
+        c2.appendChild(input2); 
+        c3.appendChild(input3);
+       //Append cell in created row
+       row.appendChild(c1);
+       row.appendChild(c2);
+       row.appendChild(c3);
+
+       //Append row to table
+       table.appendChild(row);
+
+    }
+</script>
+</html>

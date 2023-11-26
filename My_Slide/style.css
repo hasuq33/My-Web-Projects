@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background: #653dde;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+    text-align: center;
+}
+
+.swiper-slide{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    transition: .5s linear;
+}
+
+.swiper-slide img{
+    height: 26rem;
+    width: 38rem;
+    object-fit: contain;
+}
