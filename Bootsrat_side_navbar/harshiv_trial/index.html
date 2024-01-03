@@ -15,9 +15,8 @@
     <!--<title>Dashboard Sidebar Menu</title>--> 
 </head>
 <body>
-    <div class="body">
     <nav class="sidebar close">
-        <header class="wt_header">
+        <header>
             <div class="image-text">
                 <span class="image">
                     <!--<img src="logo.png" alt="">-->
@@ -93,18 +92,30 @@
                         <span class="text nav-text">Logout</span>
                     </a>
                 </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
                 
             </div>
         </div>
 
     </nav>
-</div>
+
     <section class="home">
         <div class="text">Dashboard Sidebar</div>
     </section>
 
     <script>
-      const body = document.querySelector('.body'),
+        const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
       toggle = body.querySelector(".toggle"),
       searchBtn = body.querySelector(".search-box"),

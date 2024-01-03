@@ -1,0 +1,208 @@
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    --webkit-text-size-adjust: 100%;
+
+}
+
+
+.o_field_widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+    display: inline-block;
+    text-align: inherit;
+}
+
+/* Empployee Itself Middle Of the Tree */
+ .o_org_chart_entry.o_org_chart_entry_self:not(:first-child) {
+    margin-top: 9px;
+}
+
+.o_org_chart_group_up + .o_org_chart_entry_self {
+    margin-left: 32.2px;
+}
+
+#o_employee_right .o_org_chart_group_up + .o_org_chart_entry_self + .o_org_chart_group_down {
+    padding-left: 64.4px;
+}
+
+.o_org_chart_entry{
+    margin-bottom: 6px;
+    overflow: visible;
+    margin-top: 0;
+    position: relative;
+}
+
+.media{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+}
+
+.media-body strong{
+    display: block;
+    line-height: 1.2;
+    font-size: 11px;
+    color: #939ba2;
+}
+.media-body{
+    vertical-align: middle;
+    position: relative;
+    flex: 1;
+    opacity: 1;
+}
+.badge{
+    float: right;
+    cursor: pointer;
+    margin-right: 5px;
+    color: #6c757d !important;
+    background: white;
+    border: 1px solid #6c757d !important;
+    
+}
+
+.badge-pill{
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+    border-radius: 10rem;
+}
+
+.o_media_object{
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    border: 2px solid #00A09D;
+    box-shadow: inset 0 0 0 2px white;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+/* For uppeer Parent */
+.o_org_chart_group_up::before{
+    content: '';
+    background-color: white;
+    border: 0px solid #bfbfbf;
+    border-left-width: 1px;
+    height: calc(100% + 23px);
+    position: absolute;
+    top: 9.6px;
+    left: 22.5px;
+    bottom: auto;
+    right: auto;
+}
+
+.o_org_chart_group_up .o_media_heading{
+    color: #78828a !important;
+    font-size: 13px !important;
+}
+
+.o_org_chart_group_down .o_media_heading{
+    color: #78828a !important;
+    font-size: 13px !important;
+}
+
+.o_org_chart_group_up .o_org_chart_entry:last-of-type::before{
+    content: '';
+    background-color: white;
+    border: 0px solid #bfbfbf;
+    border-width: 0 0 1px 1px;
+    width: 11px;
+    height: 35px;
+    position: absolute;
+    top: 100%;
+    left: 22.5px;
+    bottom: auto;
+    right: auto;
+}
+
+.o_org_chart_group_up .o_media_object{
+    display: block;
+    width: 36.8px;
+    height: 36.8px;
+    margin: 4.6px;
+    box-shadow: 0 0 0 1px #cccccc;
+    background-size: cover;
+    background-position: center center;
+    background-color: white;
+    border: 2px solid #cccccc;
+}
+
+.o_org_chart_group_up,.o_org_chart_group_down{
+    position: relative;
+    width: 100%;
+}
+
+/* For Child ids */
+.o_org_chart_group_down{
+    padding-left: 64.4px;
+}
+.o_org_chart_group_down::before{
+    content: '';
+    background-color: white;
+    border: 0px solid #bfbfbf;
+    border-left-width: 1px;
+    height: 100%;
+    position: absolute;
+    top: -29px;
+    left: 53.2px;
+    bottom: auto;
+    right: auto;
+}
+
+.o_org_chart_group_down .o_org_chart_entry::before{
+    content: '';
+    background-color: white;
+    border: 0px solid #bfbfbf;
+    border-top-width: 1px;
+    width: 16.2px;
+    height: 0;
+    position: absolute;
+    top: 17px;
+    left: -11px;
+    bottom: auto;
+    right: auto;
+}
+
+.o_org_chart_group_down .o_media_object{
+    display: block;
+    width: 36.8px;
+    height: 36.8px;
+    margin: 4.6px;
+    box-shadow: 0 0 0 1px #cccccc;
+    background-size: cover;
+    background-position: center center;
+    background-color: white;
+    border: 2px solid #cccccc;
+}
+
+@media (min-width:1200px) {
+    o_emoloyee_right {
+        flex: 0 1 30%;
+    }
+}
+
+@media (min-width:992px) {
+    #o_employee_right {
+        flex: 0 1 33%;
+    }
+}
+
+@media (min-width:768px) {
+    #o_employee_right {
+        flex: 0 1 35%;
+        margin-left: 2%;
+        padding-left: 2%;
+        border-left: 1px solid #8f8f8f;
+    }
+
+    .o_org_chart_title {
+        color: #6c757d;
+    }
+}
