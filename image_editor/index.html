@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="field container d-flex align-items-center flex-column mt-5">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button onclick="undo_last()" class="button" type="button">Undo</button>
+            <button class="button" onclick="clear_canvas()" type="button">Clear</button>
+            <button class="button" onclick="convert_image()" type="button">Convert</button>
+
+            <div onclick="change_color(this)" class="color-field" style="background: red;"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: blue;"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: green;"></div>
+            <div onclick="change_color(this)" class="color-field" style="background: yellow;"></div>
+
+            <input oninput="draw_color = this.value" type="color" class="color-picker" style="cursor: pointer;"/>
+            <input type="range" min="1" max="100" class="pen-range" oninput="draw_width = this.value"/>
+            <input type="file"  id="imageInput" accept="image/*"/>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
