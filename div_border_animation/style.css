@@ -1,0 +1,44 @@
+body{
+    height: 100vh;
+    background-color: rgb(211, 219, 217);
+}
+
+.harshiv{
+    background: rgb(132, 255, 0);
+    height: 300px;
+    width: 300px;
+}
+
+.foram{
+    padding: 10px;
+}
+
+.foram:hover{
+    animation: border-animation 2s running ; ;
+    border: 1px solid transparent; /* Added to remove default browser border */
+    border-color: black;
+    cursor: pointer;
+}
+
+@keyframes border-animation{
+    0%{
+        border: none;
+    }
+    25%{
+        border-top: 1px solid black;
+    }
+
+    50%{
+        border-right:1px solid black;
+    }
+
+    75%{
+        border-bottom: 1px solid black;
+    }
+
+    100%{
+        border-left: 1px solid black;
+    }
+}
+
+
